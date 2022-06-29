@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Info {
+  count: Float!
+  pages: Float!
+  next: Float!
+  prev: Float!
+}
+
+type Results {
+  id: String!
+  name: String!
+  status: String!
+  species: String!
+  gender: String!
+}
+
+type GetCharacters {
+  info: Info
+  results: [Results!]!
+}
+
+type GetCharactersResult {
+  characters: GetCharacters
+}
+
+type Product {
+  product_id: Float!
+  name: String!
+  price: String!
+  available: Boolean!
+}
+
+type Query {
+  get_all_product: [Product!]!
+  get_char_charService(charInput: CharInput!): GetCharactersResult!
+}
+
+input CharInput {
+  page: Float
+}
